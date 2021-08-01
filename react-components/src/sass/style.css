@@ -381,19 +381,140 @@ html {
 
 img {
   max-width: 100%;
-  height: auto;
+  height: 100%;
+  border-radius: 5px;
 }
 
-h1 {
-  color: blue;
+.container {
+  max-width: 1200px;
+  padding: 0;
+  margin: 0 auto;
 }
 
-.card {
-  width: 300px;
-  height: 450px;
+.cards-content {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card-body {
+  width: 220px;
+  height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 8px auto;
+  border: black 1px solid;
+  position: relative;
+}
+
+.card-img {
+  width: 200px;
+  height: 300px;
+  margin: 16px auto;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  position: relative;
+}
+
+.card-film-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+  cursor: pointer;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.card-img:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.card-img:hover .card-film-play {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  opacity: 1;
+}
+
+.card-footer {
+  width: 100%;
+}
+
+.card-film-name {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.card-film-country {
+  margin: 0;
+  padding: 0;
+  margin-top: 16px;
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+  margin: 8px 0;
 }
 
 .search-content {
   width: 100%;
+  margin: 16px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.search-input {
+  width: 95%;
+  height: 48px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.btn {
+  width: 50%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  border: 2px solid teal;
+  border-radius: 5px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.btn:hover {
+  background-color: gray;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

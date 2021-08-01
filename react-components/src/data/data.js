@@ -1,7 +1,7 @@
 export default [
   {
     name: 'Семнадцать мгновений весны',
-    url: '../assets/img/poster1.jpg',
+    url: './assets/img/poster1.jpg',
     country: 'USSR',
     year: '1973',
     genre: 'военный',
@@ -9,7 +9,7 @@ export default [
   },
   {
     name: 'Место встречи изменить нельзя',
-    url: '../assets/img/poster2.jpg',
+    url: './assets/img/poster2.jpg',
     country: 'USSR',
     year: '1979',
     genre: 'детектив',
@@ -17,7 +17,7 @@ export default [
   },
   {
     name: 'Ликвидация',
-    url: '../assets/img/poster3.jpg',
+    url: './assets/img/poster3.jpg',
     country: 'Russia',
     year: '2007',
     genre: 'детектив',
@@ -25,7 +25,7 @@ export default [
   },
   {
     name: '12 стульев',
-    url: '../assets/img/poster4.jpg',
+    url: './assets/img/poster4.jpg',
     country: 'USSR',
     year: '1976',
     genre: 'комедия',
@@ -33,7 +33,7 @@ export default [
   },
   {
     name: 'Вампиры средней полосы',
-    url: '../assets/img/poster5.jpg',
+    url: './assets/img/poster5.jpg',
     country: 'Russia',
     year: '2021',
     genre: 'комедия',
@@ -41,7 +41,7 @@ export default [
   },
   {
     name: 'Приключения Пети и Волка',
-    url: '../assets/img/poster6.jpg',
+    url: './assets/img/poster6.jpg',
     country: 'Russia',
     year: '2018-2021',
     genre: 'мультфильм',
@@ -49,7 +49,7 @@ export default [
   },
   {
     name: 'Приключения капитана Врунгеля',
-    url: '../assets/img/poster7.jpg',
+    url: './assets/img/poster7.jpg',
     country: 'USSR',
     year: '1976-1979',
     genre: 'мультфильм',
@@ -57,7 +57,7 @@ export default [
   },
   {
     name: 'Бригада',
-    url: '../assets/img/poster8.jpg',
+    url: './assets/img/poster8.jpg',
     country: 'Russia',
     year: '2002',
     genre: 'криминал',
@@ -65,7 +65,7 @@ export default [
   },
   {
     name: 'Мастер и Маргарита',
-    url: '../assets/img/poster9.jpg',
+    url: './assets/img/poster9.jpg',
     country: 'Russia',
     year: '2005',
     genre: 'триллер',
@@ -73,7 +73,7 @@ export default [
   },
   {
     name: 'Большая перемена',
-    url: '../assets/img/poster10.jpg',
+    url: './assets/img/poster10.jpg',
     country: 'USSR',
     year: '1973',
     genre: 'комедия',

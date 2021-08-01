@@ -1,0 +1,46 @@
+.card-body {
+  width: 220px;
+  height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 8px auto;
+  border: black 1px solid;
+}
+
+.card-img {
+  width: 200px;
+  height: 300px;
+  margin: 16px auto;
+  cursor: pointer;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.card-img:hover {
+  opacity: 0.8;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.card-footer {
+  width: 100%;
+}
+
+.card-film-name {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.card-film-country {
+  margin: 0;
+  padding: 0;
+  margin-top: 16px;
+  text-align: center;
+}
+/*# sourceMappingURL=card.css.map */

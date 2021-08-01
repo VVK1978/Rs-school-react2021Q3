@@ -1,0 +1,42 @@
+.card-body {
+  width: 220px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  margin: 8px auto;
+  border: black 1px solid;
+}
+
+.card-img {
+  width: 200px;
+  height: 300px;
+  margin: 16px auto;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+
+.card-img:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
+
+.card-footer {
+  width: 100%;
+}
+
+.card-film-name {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.card-film-country {
+  margin: 0;
+  padding: 0;
+  margin-top: 16px;
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}

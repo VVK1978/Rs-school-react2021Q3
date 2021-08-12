@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "highlightCode": false,
+  "sourceMaps": "both",
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties", { "regenerator": true }],
+    ["@babel/plugin-transform-runtime"]
+  ]
+}

@@ -1,0 +1,26 @@
+export default [
+  ['Name'],
+  [
+    'Name',
+    'Time,min',
+    'Budget,mln.$',
+    'Cachbox',
+    'Academy Nomination',
+    'Academy Awards',
+    'Tomato Score',
+  ],
+  [
+    'Height',
+    'Race',
+    'Gender',
+    'Birth',
+    'Spouse',
+    'Death',
+    'Realm',
+    'Hair',
+    'Name',
+    'wikiUrl',
+  ],
+  ['Dialog', 'Movie', 'Name'],
+  ['Name', 'Book'],
+];

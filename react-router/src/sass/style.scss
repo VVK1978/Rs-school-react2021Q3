@@ -1,0 +1,21 @@
+@import "normalize";
+
+@import "scafolding";
+
+@import '../components/ui/header/header.scss';
+
+@import '../components/ui/navbar/navbar.scss';
+
+@import '../components/ui/search/search.scss';
+
+@import '../components/ui/input/input.scss';
+
+@import '../components/ui/button/button.scss';
+
+@import '../pages/Home/home.scss';
+
+@import '../pages/About/about.scss';
+
+@import '../pages/Details/details.scss';
+
+@import '../components/ui/table/table.scss';

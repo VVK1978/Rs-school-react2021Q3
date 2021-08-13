@@ -1,0 +1,16 @@
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.loader {
+  color: red;
+  margin-top: 32px;
+}

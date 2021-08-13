@@ -1,0 +1,57 @@
+@font-face {
+  font-weight: 400;
+  font-family: 'Nunito';
+  font-style: normal;
+  src: url("../assets/fonts/nunito-regular.ttf");
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: 'Nunito';
+  font-style: normal;
+  src: url("../assets/fonts/nunito-bold.ttf");
+}
+
+body {
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  background-color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #545454;
+  background-size: 100% 100%;
+  padding: 10px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.main-title {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+/*# sourceMappingURL=scafolding.css.map */

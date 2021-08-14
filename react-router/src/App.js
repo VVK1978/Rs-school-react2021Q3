@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, HashRouter } from 'react-router-dom';
 import About from './pages/About/about.jsx';
 import Home from './pages/Home/home.jsx';
 import Details from './pages/Details/details.jsx';
@@ -8,35 +8,26 @@ import './sass/style.scss';
 
 function App() {
   const h1 = <h1 className="main-title">React.Routing</h1>;
-  const routes = [
-    { path: '/', Component: Home },
-    {
-      path: '/about',
-      Component: About,
-    },
-    {
-      path: '/details/:id',
-      Component: Details,
-    },
-    {
-      path: '/page404',
-      Component: Page404,
-    },
-  ];
-
   return (
     <div className="main">
       {h1}
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
-          {routes.map(({ path, Component }) => (
-            <Route key={path} exact path={path}>
-              <Component />
-            </Route>
-          ))}
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/details/:id">
+            <Details />
+          </Route>
+          <Route>
+            <Page404 path="/page404" />
+          </Route>
           <Redirect to="/page404" />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

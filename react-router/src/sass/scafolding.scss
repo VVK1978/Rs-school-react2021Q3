@@ -3,21 +3,21 @@
 
 @font-face {
   font-weight: 400;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-style: normal;
-  src: url('../assets/fonts/nunito-regular.ttf');
+  src: url("../assets/fonts/nunito-regular.ttf");
 }
 
 @font-face {
   font-weight: 600;
-  font-family: 'Nunito';
+  font-family: "Nunito";
   font-style: normal;
-  src: url('../assets/fonts/nunito-bold.ttf');
+  src: url("../assets/fonts/nunito-bold.ttf");
 }
 
 body {
   position: relative;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 400;
   background-color: $body-bg;
   font-size: $main-font-size;
@@ -54,4 +54,32 @@ h2 {
 .main-title {
   margin-top: 10px;
   margin-bottom: 15px;
+}
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 1;
+  transform: scale(0.5);
+  transition: opacity 200ms, transform 200ms;
 }

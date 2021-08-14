@@ -539,6 +539,11 @@ h2 {
   text-align: center;
 }
 
+.loader {
+  color: red;
+  margin-top: 32px;
+}
+
 .about-title {
   margin-top: 50px;
   text-align: center;

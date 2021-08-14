@@ -41,6 +41,7 @@ const config = {
     overlay: true,
     stats: 'errors-only',
     clientLogLevel: 'none',
+    historyApiFallback: true,
   },
 
   module: {

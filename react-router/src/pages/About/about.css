@@ -1,3 +1,7 @@
+.about-content {
+  position: relative;
+}
+
 .about-title {
   margin-top: 50px;
   text-align: center;

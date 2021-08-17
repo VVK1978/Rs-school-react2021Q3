@@ -1,0 +1,17 @@
+.limit-label {
+  font-size: 20px;
+  font-weight: 800;
+  color: chocolate;
+}
+
+.limit-select {
+  margin-left: 10px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.limit-select:hover {
+  background-color: cornsilk;
+}
+/*# sourceMappingURL=limit.css.map */

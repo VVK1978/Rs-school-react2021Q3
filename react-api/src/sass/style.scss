@@ -1,0 +1,23 @@
+@import "normalize";
+
+@import "scafolding";
+
+@import "../pages/Main/main.scss";
+
+@import "../components/ui/header/header.scss";
+
+@import "../components/ui/search/search.scss";
+
+@import "../components/ui/input/input.scss";
+
+@import "../components/ui/button/button.scss";
+
+@import "../pages/Main/character/character.scss";
+
+@import "../components/ui/pagination/pagination.scss";
+
+@import "../components/ui/limit/limit.scss";
+
+@import "../components/ui/sort/sort.scss";
+
+@import "../components/ui/sort-direction/sortDirection.scss";

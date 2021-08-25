@@ -3,14 +3,16 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render } from '@testing-library/react';
-import Search from './Search.jsx';
+import Pagination from './Pagination.jsx';
 import store from '../../reducers/index';
 
-test('renders correctly', async () => {
+const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+test('renders correctly Pagination', async () => {
   const wrapper = render(
     <Provider store={store}>
       <Router>
-        <Search />
+        <Pagination {...pages} />
       </Router>
     </Provider>,
   );

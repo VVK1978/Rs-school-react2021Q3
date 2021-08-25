@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-import React from 'react';
+/* import React from 'react';
 import shallow from 'enzyme/build/shallow';
 import * as redux from 'react-redux';
 import Input from './Input.jsx';
@@ -25,4 +24,23 @@ describe('Component with redux hooks', () => {
     const component = shallow(<Input />);
     expect(component).toMatchSnapshot();
   });
+});
+ */
+/* eslint-disable no-undef */
+import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import Input from './Input.jsx';
+import store from '../../reducers/index';
+
+test('renders correctly', async () => {
+  const wrapper = render(
+    <Provider store={store}>
+      <Router>
+        <Input />
+      </Router>
+    </Provider>,
+  );
+  expect(wrapper).toMatchSnapshot();
 });

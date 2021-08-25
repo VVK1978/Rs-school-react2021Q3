@@ -6,7 +6,6 @@ import React from 'react';
 import * as redux from 'react-redux';
 import Button from './components/ui/button/button.jsx';
 import Header from './components/ui/header/Header.jsx';
-import Input from './components/ui/input/Input.jsx';
 import Navbar from './components/ui/navbar/Navbar.jsx';
 import Pagination from './components/ui/pagination/Pagination.jsx';
 import pagesCreator from './components/utils/pagesCreator';
@@ -83,8 +82,8 @@ describe('Component with redux hooks', () => {
     expect(result).toBe(setPerPage(20, SET_PER_PAGE));
   });
 
-  it('should render Pagination component', () => {
-    const component = shallow(<Pagination />);
+  test('should render Pagination component', () => {
+    const component = shallow(<Pagination {...pages} />);
     expect(component).toMatchSnapshot();
   });
 });

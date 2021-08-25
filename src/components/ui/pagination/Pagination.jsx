@@ -11,7 +11,7 @@ export default function Pagination() {
   const searchValue = useSelector((state) => state.characters.searchValue);
   const sortBy = useSelector((state) => state.characters.sortBy);
   const dispatch = useDispatch();
-  const pages = pageCreator(totalPages, perPage, currentPage);
+  const pages = pageCreator(totalPages, currentPage);
   const handleClick = (page) => {
     dispatch(setCurrentPage(page));
     dispatch(getSearchCharacters(searchValue, perPage, page, sortBy));

@@ -52,7 +52,7 @@ describe('>>>Actions tests (sync)...', () => {
   });
 
   it('should checking action setCharacters', () => {
-    const characters = { a: 1, b: 2 };
+    const characters = { items: [], totalPages: 1, isFetching: false };
     expect(setCharacters(characters)).toEqual({
       type: 'SET_CHARACTERS',
       payload: characters,
@@ -61,23 +61,52 @@ describe('>>>Actions tests (sync)...', () => {
 });
 
 describe('>>>Action test (async)', () => {
-  const API_URL = 'https://the-one-api.dev/v2/characters?name=/"asa"/i&page=1';
+  const baseURL = 'https://the-one-api.dev/v2';
+  const searchValue = 'asa';
+  const perPage = 10;
+  const page = 1;
+  const sortBy = 'name';
+  const sortDirection = 'asc';
+  const request = `/character?name=/${searchValue}/i&limit=${perPage}&page=${page}&sort=${sortBy}:${sortDirection}`;
   afterEach(() => {
     fetchMock.reset();
     fetchMock.restore();
   });
+
   it('', () => {
-    fetchMock.getOnce(API_URL, {
+    fetchMock.getOnce(`${baseURL}${request}`, {
       headers: { 'content-type': 'application/json' },
       body: {
-        data: { docs: { name: 'asa', _id: 1213, gender: 'mail' } },
-        status: 'ok',
+        data: {
+          docs: {
+            birth: 'Late ,Third Age',
+            death: 'Presumably sometime after ,TA 3019',
+            gender: 'Male',
+            hair: '',
+            height: '',
+            name: 'Harry Goatleaf',
+            race: 'Human',
+            realm: '',
+            spouse: '',
+            wikiUrl: 'http://lotr.wikia.com//wiki/Harry_Goatleaf',
+            _id: '5cd99d4bde30eff6ebccfeb2',
+          },
+          limit: 10,
+          page: 1,
+          pages: 1,
+          total: 1,
+        },
+        status: 200,
       },
     });
-    const actions = setCharacters();
+    const actions = setCharacters({
+      type: 'SET_CHARACTERS',
+      payload: {},
+    });
     const store = mockStore({});
-    console.log(store.getActions());
-    return store.dispatch(getSearchCharacters('asa', 10)).then(() => {
+    store.dispatch(actions);
+
+    return store.dispatch(getSearchCharacters('af', 10)).then(() => {
       expect(store.getActions()).toEqual(actions);
     });
   });

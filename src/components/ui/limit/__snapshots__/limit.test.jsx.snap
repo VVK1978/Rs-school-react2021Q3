@@ -1,27 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component with redux hooks should render Input component 1`] = `ShallowWrapper {}`;
-
 exports[`renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <input
-        class="search-input"
-        name="search"
-        placeholder="Search by name..."
-        type="text"
-      />
+      <label
+        class="limit-label"
+        for="limit"
+      >
+        Limit
+        <select
+          class="limit-select"
+          id="limit"
+          type="number"
+        >
+          <option>
+            10
+          </option>
+          <option>
+            20
+          </option>
+          <option>
+            50
+          </option>
+          <option>
+            100
+          </option>
+        </select>
+      </label>
     </div>
   </body>,
   "container": <div>
-    <input
-      class="search-input"
-      name="search"
-      placeholder="Search by name..."
-      type="text"
-    />
+    <label
+      class="limit-label"
+      for="limit"
+    >
+      Limit
+      <select
+        class="limit-select"
+        id="limit"
+        type="number"
+      >
+        <option>
+          10
+        </option>
+        <option>
+          20
+        </option>
+        <option>
+          50
+        </option>
+        <option>
+          100
+        </option>
+      </select>
+    </label>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

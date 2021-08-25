@@ -1,38 +1,54 @@
 import axios from 'axios';
 import {
-  setCharacters,
-  setPerPage,
-  setSort,
-  setSortDirection,
+  SET_PER_PAGE,
+  SET_SEARCH_VALUE,
+  SET_SORT_VALUE,
+  SET_SORT_DIRECTION,
+  SET_CURRENT_PAGE,
+  SET_CHARACTERS,
 } from '../components/reducers/characterReducer';
 
-const axiosInstance = axios.create({
+export const axiosInstance = axios.create({
   baseURL: 'https://the-one-api.dev/v2',
   timeout: 5000,
 });
 
-const headersConfig = {
+export const headersConfig = {
   Accept: 'application/json',
   Authorization: `${process.env.REACT_APP_API_KEY}`,
 };
 
-const setPerPageLimit = (limit) => async (dispatch) => {
-  await dispatch(setPerPage(limit));
-};
+export const setPerPageLimit = (limit) => ({
+  type: SET_PER_PAGE,
+  payload: limit,
+});
 
-const setSearchValue = (searchValue) => async (dispatch) => {
-  await dispatch(setSearchValue(searchValue));
-};
+export const setSearchValue = (searchValue) => ({
+  type: SET_SEARCH_VALUE,
+  payload: searchValue,
+});
 
-const setSortValue = (sortBy) => async (dispatch) => {
-  await dispatch(setSort(sortBy));
-};
+export const setSortValue = (sortBy) => ({
+  type: SET_SORT_VALUE,
+  payload: sortBy,
+});
 
-const setSortDirectionValue = (sortDirection) => async (dispatch) => {
-  await dispatch(setSortDirection(sortDirection));
-};
+export const setSortDirectionValue = (sortDirection) => ({
+  type: SET_SORT_DIRECTION,
+  payload: sortDirection,
+});
 
-const getSearchCharacters = (
+export const setCurrentPage = (currentPage) => ({
+  type: SET_CURRENT_PAGE,
+  payload: currentPage,
+});
+
+export const setCharacters = (characters) => ({
+  type: SET_CHARACTERS,
+  payload: characters,
+});
+
+export const getSearchCharacters = (
   searchValue,
   perPage,
   page = 1,
@@ -46,13 +62,4 @@ const getSearchCharacters = (
     });
     await dispatch(setCharacters(response.data));
   };
-};
-
-// eslint-disable-next-line object-curly-newline
-export {
-  setPerPageLimit,
-  setSearchValue,
-  getSearchCharacters,
-  setSortValue,
-  setSortDirectionValue,
 };

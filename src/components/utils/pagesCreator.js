@@ -1,4 +1,4 @@
-export default function pagesCreator(totalPages, perPage, currentPage) {
+export default function pagesCreator(totalPages, currentPage) {
   let pages = [];
   if (totalPages < 11) {
     pages = Array(totalPages)

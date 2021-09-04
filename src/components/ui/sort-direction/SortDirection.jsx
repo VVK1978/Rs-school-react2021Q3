@@ -5,7 +5,7 @@ import arrowDown from '../../../assets/icons/arrow-down.svg';
 import {
   setSortDirectionValue,
   getSearchCharacters,
-} from '../../../actions/characters.jsx';
+} from '../../../actions/characters';
 
 export default function SortDirection() {
   const dispatch = useDispatch();

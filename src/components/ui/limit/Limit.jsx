@@ -3,18 +3,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   setPerPageLimit,
   getSearchCharacters,
-} from '../../../actions/characters.jsx';
+} from '../../../actions/characters';
 import { setCurrentPage } from '../../reducers/characterReducer';
 
 export default function Limit(props) {
   const dispatch = useDispatch();
   const searchValue = useSelector((state) => state.characters.searchValue);
   const sortBy = useSelector((state) => state.characters.sortBy);
+  const firstPage = 1;
   const handlerChange = (event) => {
     const perPage = parseInt(event.target.value, 10);
     dispatch(setPerPageLimit(perPage));
-    dispatch(setCurrentPage(1));
-    dispatch(getSearchCharacters(searchValue, perPage, 1, sortBy));
+    dispatch(setCurrentPage(firstPage));
+    dispatch(getSearchCharacters(searchValue, perPage, firstPage, sortBy));
   };
   return (
     <>

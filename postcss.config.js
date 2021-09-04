@@ -1,18 +1,18 @@
-// It is handy to not have those transformations while we developing
-if (process.env.NODE_ENV === 'production') {
+if (process.env.npm_lifecycle_event === 'build') {
   module.exports = {
     plugins: [
       require('autoprefixer'),
       require('css-mqpacker'),
       require('cssnano')({
         preset: [
-          'default', {
+          'default',
+          {
             discardComments: {
-              removeAll: true
-            }
-          }
-        ]
-      })
-    ]
-  }
+              removeAll: true,
+            },
+          },
+        ],
+      }),
+    ],
+  };
 }

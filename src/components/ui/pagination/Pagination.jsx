@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentPage } from '../../reducers/characterReducer';
-import { getSearchCharacters } from '../../../actions/characters.jsx';
+import { getSearchCharacters } from '../../../actions/characters';
 import pageCreator from '../../utils/pagesCreator';
 
 export default function Pagination() {
@@ -11,7 +11,7 @@ export default function Pagination() {
   const searchValue = useSelector((state) => state.characters.searchValue);
   const sortBy = useSelector((state) => state.characters.sortBy);
   const dispatch = useDispatch();
-  const pages = pageCreator(totalPages, currentPage);
+  const pages = pageCreator(totalPages, perPage, currentPage);
   const handleClick = (page) => {
     dispatch(setCurrentPage(page));
     dispatch(getSearchCharacters(searchValue, perPage, page, sortBy));

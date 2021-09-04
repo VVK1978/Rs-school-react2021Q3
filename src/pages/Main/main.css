@@ -4,5 +4,10 @@
   font-size: 32px;
   font-weight: 900;
   color: chocolate;
+  display: none;
+}
+
+.loader.active {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */

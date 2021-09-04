@@ -1,7 +1,7 @@
 import React from 'react';
-import Limit from '../../../components/ui/limit/Limit.jsx';
-import SortDirection from '../../../components/ui/sort-direction/SortDirection.jsx';
-import Sort from '../../../components/ui/sort/Sort.jsx';
+import Limit from '../../../components/ui/limit/Limit';
+import SortDirection from '../../../components/ui/sort-direction/SortDirection';
+import Sort from '../../../components/ui/sort/Sort';
 
 export default function Character(props) {
   const { characters } = props;

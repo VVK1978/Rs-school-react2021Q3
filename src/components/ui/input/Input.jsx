@@ -14,8 +14,8 @@ export default function Input() {
         type="text"
         className="search-input"
         onChange={handlerChange}
-				name="search"
-				placeholder='Search by name...'
+        name="search"
+        placeholder="Search by name..."
       />
     </>
   );

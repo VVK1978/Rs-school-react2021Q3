@@ -1,104 +1,60 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const isDev = process.env.npm_lifecycle_event === 'start';
+const htmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
-const ENV = process.env.npm_lifecycle_event;
-const isDev = ENV === 'dev';
-const isProd = ENV === 'build';
-
-function setDevTool() {
-  if (isDev) {
-    return 'source-map';
-  } else {
-    return 'none';
-  }
-}
-
-function setDMode() {
-  if (isProd) {
-    return 'production';
-  } else {
-    return 'development';
-  }
-}
-
 const config = {
-  mode: setDMode(),
-  devtool: setDevTool(),
-  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
-
+  mode: isDev ? 'development' : 'production',
+  devtool: isDev ? 'inline-source-map' : false,
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 3000,
-    overlay: true,
-    stats: 'errors-only',
-    clientLogLevel: 'none',
     historyApiFallback: true,
+    port: 4000,
+    open: true,
+    hot: true,
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
+  entry: './src/client.js',
+  optimization: {
+    minimize: true,
   },
   module: {
     rules: [
       {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: {
-              minimize: false,
-            },
-          },
-        ],
-      },
-
-      {
-        test: /\.(js)x?$/,
-        exclude: /(node_modules)/,
+        test: /\.(ts|js)x?$/i,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+            ],
           },
         },
       },
-
       {
-        // Apply rule for .sass, .scss or .css files
         test: /\.(sa|sc|c)ss$/,
-
-        // Set loaders to transform files.
-        // Loaders are applying from right to left(!)
-        // The first loader will be applied after others
         use: [
           {
-            // After all CSS loaders we use plugin to do his work.
-            // It gets all transformed CSS and extracts it into separate
-            // single bundled file
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../', // path to director where assets folder is located
+              publicPath: '/', // path to director where assets folder is located
             },
           },
-
           {
-            // This loader resolves url() and @imports inside CSS
             loader: 'css-loader',
           },
-
-          {
-            // Then we apply postCSS fixes like autoprefixer and minifying
-            loader: 'postcss-loader',
-          },
-
+          { loader: 'postcss-loader' },
           {
             // First we transform SASS to standard CSS
             loader: 'sass-loader',
@@ -124,62 +80,35 @@ const config = {
               name: '[name].[ext]',
             },
           },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true,
-              mozjpeg: {
-                progressive: true,
-                quality: 75,
-              },
-              // optipng.enabled: false will disable optipng
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: [0.65, 0.9],
-                speed: 4,
-              },
-              gifsicle: {
-                interlaced: false,
-                optimizationLevel: 1,
-              },
-              // the webp option will enable WEBP
-              webp: {
-                quality: 75,
-              },
-            },
-          },
         ],
       },
       {
-        test: /\.(woff|woff2|ttf|otf|eot)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: './assets/fonts',
-              name: '[name].[ext]',
-            },
-          },
-        ],
+        test: /\.(woff(2)?|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       },
     ],
+  },
+  resolve: {
+    extensions: ['.jsx', '.js'],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/bundle.css',
     }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      favicon: './src/favicon.ico',
-      filename: './index.html',
+    new webpack.HotModuleReplacementPlugin(),
+    new ESLintPlugin({
+      extensions: ['js', 'jsx'],
+    }),
+    new CleanWebpackPlugin({
+      root: path.resolve(__dirname, 'dist'),
+      verbose: true,
+      dry: false,
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, './src/assets/img'),
-          to: path.resolve(__dirname, 'dist/assets/img'),
+          from: path.resolve(__dirname, 'src/assets'),
+          to: path.resolve(__dirname, 'dist/assets'),
         },
       ],
     }),
@@ -187,8 +116,12 @@ const config = {
   ],
 };
 
-if (isProd) {
-  config.plugins.push(new UglifyJSPlugin());
+if (isDev) {
+  config.plugins.push(
+    new htmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  );
 }
 
 module.exports = config;

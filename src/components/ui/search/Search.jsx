@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getSearchCharacters } from '../../../actions/characters.jsx';
-import Button from '../button/button.jsx';
-import Input from '../input/Input.jsx';
+import { getSearchCharacters } from '../../../actions/characters';
+import Button from '../button/button';
+import Input from '../input/Input';
 
 export default function Search() {
   const searchValue = useSelector((state) => state.characters.searchValue);
@@ -13,6 +14,9 @@ export default function Search() {
   const dispatch = useDispatch();
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (document.getElementById('loader')) {
+      document.getElementById('loader').classList.add('active');
+    }
     dispatch(
       getSearchCharacters(searchValue, perPage, 1, sortBy, sortDirection),
     );

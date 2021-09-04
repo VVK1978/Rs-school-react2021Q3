@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/ui/navbar/Navbar.jsx';
+import Navbar from '../../components/ui/navbar/Navbar';
 
 export default function Page404() {
   return (

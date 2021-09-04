@@ -1,9 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  getSearchCharacters,
-  setSortValue,
-} from '../../../actions/characters.jsx';
+import { getSearchCharacters, setSortValue } from '../../../actions/characters';
 
 export default function Sort(props) {
   const dispatch = useDispatch();

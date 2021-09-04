@@ -1,25 +1,28 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
-import store from './components/reducers/index';
-import Main from './pages/Main/main.jsx';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Main from './pages/Main/main';
+import Page404 from './pages/Page404/page404';
+import About from './pages/About/about';
 import './sass/style.scss';
 
 function App() {
   return (
-    <>
-      <Provider store={store}>
-        <main className="main">
-          <BrowserRouter>
-            <div className="main-container">
-              <Route exact path="/">
-                <Main />
-              </Route>
-            </div>
-          </BrowserRouter>
-        </main>
-      </Provider>
-    </>
+    <main className="main">
+      <div className="main-container">
+        <Switch>
+          <Route exact path="/">
+            <Main />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route>
+            <Page404 path="/page404" />
+          </Route>
+          <Redirect to="/page404" />
+        </Switch>
+      </div>
+    </main>
   );
 }
 

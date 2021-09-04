@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reducer tests on dispatching should checking action SET_PER_PAGE snapshot 1`] = `
+Object {
+  "currentPage": 1,
+  "isFetching": true,
+  "items": Array [],
+  "perPage": 10,
+  "searchValue": "",
+  "sortBy": "name",
+  "sortDirection": "asc",
+  "totalPages": 0,
+}
+`;

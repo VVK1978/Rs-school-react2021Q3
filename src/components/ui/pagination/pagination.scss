@@ -1,0 +1,29 @@
+.pagination {
+  &-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 32px;
+  }
+
+  &-page {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid black;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+
+  &-page:hover {
+    background-color: aquamarine;
+  }
+}
+
+.active {
+  font-weight: 900;
+  color: red;
+  cursor: auto;
+}
+
+.active:hover {
+  background-color: transparent;
+}

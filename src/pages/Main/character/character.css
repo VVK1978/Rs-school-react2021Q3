@@ -1,0 +1,113 @@
+.title-not-found {
+  font-size: 32px;
+  color: red;
+  text-align: center;
+  margin-top: 100px;
+  line-height: 30px;
+}
+
+.character-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.character-limit-sort-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.character-content {
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.character-title {
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.character-info, .character-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.character-item {
+  font-size: 14px;
+  width: 39%;
+  height: 50px;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.character-item.small {
+  max-width: 9%;
+}
+
+.character-item.middle {
+  max-width: 17%;
+  text-align: center;
+}
+
+.head-item {
+  width: 39%;
+  text-align: center;
+  color: teal;
+  margin-bottom: 15px;
+}
+
+.head-item.small {
+  max-width: 9%;
+}
+
+.head-item.middle {
+  max-width: 17%;
+  text-align: center;
+}
+/*# sourceMappingURL=character.css.map */

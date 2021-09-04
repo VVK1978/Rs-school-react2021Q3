@@ -1,0 +1,33 @@
+.pagination-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 32px;
+}
+
+.pagination-page {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid black;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.pagination-page:hover {
+  background-color: aquamarine;
+}
+
+.active {
+  font-weight: 900;
+  color: red;
+  cursor: auto;
+}
+
+.active:hover {
+  background-color: transparent;
+}
+/*# sourceMappingURL=pagination.css.map */

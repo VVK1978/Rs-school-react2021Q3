@@ -1,0 +1,99 @@
+@font-face {
+  font-weight: 400;
+  font-family: "Nunito";
+  font-style: normal;
+  src: url("../assets/fonts/nunito-regular.ttf");
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: "Nunito";
+  font-style: normal;
+  src: url("../assets/fonts/nunito-bold.ttf");
+}
+
+body {
+  position: relative;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  background-color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #545454;
+  background-size: 100% 100%;
+  padding: 10px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  max-width: 1000px;
+}
+
+.main-title {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.page-enter {
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: opacity 200ms, -webkit-transform 200ms;
+  transition: opacity 200ms, -webkit-transform 200ms;
+  transition: opacity 200ms, transform 200ms;
+  transition: opacity 200ms, transform 200ms, -webkit-transform 200ms;
+}
+
+.page-exit {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 1;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition: opacity 200ms, -webkit-transform 200ms;
+  transition: opacity 200ms, -webkit-transform 200ms;
+  transition: opacity 200ms, transform 200ms;
+  transition: opacity 200ms, transform 200ms, -webkit-transform 200ms;
+}
+/*# sourceMappingURL=scafolding.css.map */

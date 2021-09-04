@@ -1,0 +1,18 @@
+.sort-label {
+  font-size: 20px;
+  font-weight: 800;
+  color: chocolate;
+  margin-left: 32px;
+}
+
+.sort-select {
+  margin-left: 10px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.sort-select:hover {
+  background-color: cornsilk;
+}
+/*# sourceMappingURL=sort.css.map */

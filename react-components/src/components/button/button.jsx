@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Btn extends Component {
+class Button extends Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -15,4 +15,4 @@ class Btn extends Component {
   }
 }
 
-export default Btn;
+export default Button;

@@ -15,13 +15,13 @@ class App extends Component {
 
     return (
       <>
-       <div className='container'>
-          <Search/>
-            <div className='cards-content'>
-              {data.map((el, index) => (<Card key={`card-${index}`} ind={index}/>))}
-            </div>
-      </div>
-    </>);
+        <div className='container'>
+          <Search />
+          <div className='cards-content'>
+            {data.map((el, index) => (<Card key={`card-${index}`} cardIndex={index} />))}
+          </div>
+        </div>
+      </>);
   }
 }
 

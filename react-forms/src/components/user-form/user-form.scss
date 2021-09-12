@@ -1,0 +1,60 @@
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.label-form {
+  max-width: 45%;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-form {
+  width: 75%;
+  border-radius: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.date,
+.zip {
+  width: 50%;
+}
+
+.cities {
+  display: none;
+}
+
+.subscribe {
+  margin: 0;
+  width: 4%;
+}
+
+.btn-container {
+  max-width: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cards-container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}

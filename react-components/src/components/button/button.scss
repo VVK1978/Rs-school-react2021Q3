@@ -1,0 +1,15 @@
+.btn {
+  width: 50%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  border: 2px solid teal;
+  border-radius: 5px;
+  transition: 0.3s all;
+}
+
+.btn:hover {
+  background-color: gray;
+  color: white;
+}

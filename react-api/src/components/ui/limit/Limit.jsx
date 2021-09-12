@@ -21,21 +21,19 @@ export default function Limit(props) {
     await updateState(updatedData);
   };
   return (
-    <>
-      <label htmlFor="limit" className="limit-label">
-        Limit
-        <select
-          type="number"
-          className="limit-select"
-          id="limit"
-          onChange={handlerChange}
-          defaultValue={data.perPage}
-        >
-          {props.options.map((option, ind) => (
-            <option key={ind}>{option}</option>
-          ))}
-        </select>
-      </label>
-    </>
+    <label htmlFor="limit" className="limit-label">
+      Limit
+      <select
+        type="number"
+        className="limit-select"
+        id="limit"
+        onChange={handlerChange}
+        defaultValue={data.perPage}
+      >
+        {props.options.map((option, ind) => (
+          <option key={ind}>{option}</option>
+        ))}
+      </select>
+    </label>
   );
 }

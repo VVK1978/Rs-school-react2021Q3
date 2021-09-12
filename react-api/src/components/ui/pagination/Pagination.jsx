@@ -17,22 +17,20 @@ export default function Pagination(props) {
   return (
     <>
       {data.characters.length !== 0 ? (
-        <>
-          <div className="pagination-container">
-            {pages.map((page, index) => (
-              <div key={index}>
-                <span
-                  className={`pagination-page ${
-                    data.currentPage === page ? 'active' : ''
-                  }`}
-                  onClick={() => handleClick(page)}
-                >
-                  {page}
-                </span>
-              </div>
-            ))}
-          </div>
-        </>
+        <div className="pagination-container">
+          {pages.map((page, index) => (
+            <div key={index}>
+              <span
+                className={`pagination-page ${
+                  data.currentPage === page ? 'active' : ''
+                }`}
+                onClick={() => handleClick(page)}
+              >
+                {page}
+              </span>
+            </div>
+          ))}
+        </div>
       ) : (
         ''
       )}

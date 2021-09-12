@@ -17,21 +17,19 @@ export default function Sort(props) {
     await updateState(updatedData);
   };
   return (
-    <>
-      <label htmlFor="sort" className="sort-label">
-        Sort by:
-        <select
-          type="text"
-          className="sort-select"
-          id="sort"
-          onChange={handlerChange}
-          defaultValue={defaultValueOfSelect}
-        >
-          {options.map((option, ind) => (
-            <option key={`${option}-${ind}`}>{option}</option>
-          ))}
-        </select>
-      </label>
-    </>
+    <label htmlFor="sort" className="sort-label">
+      Sort by:
+      <select
+        type="text"
+        className="sort-select"
+        id="sort"
+        onChange={handlerChange}
+        defaultValue={defaultValueOfSelect}
+      >
+        {options.map((option, ind) => (
+          <option key={`${option}-${ind}`}>{option}</option>
+        ))}
+      </select>
+    </label>
   );
 }

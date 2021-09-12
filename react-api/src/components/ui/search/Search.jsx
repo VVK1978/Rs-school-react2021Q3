@@ -27,11 +27,9 @@ export default function Search(props) {
   };
 
   return (
-    <>
-      <form className="search-form" onSubmit={handleSubmit} name="search-form">
-        <Input />
-        <Button />
-      </form>
-    </>
+    <form className="search-form" onSubmit={handleSubmit} name="search-form">
+      <Input />
+      <Button />
+    </form>
   );
 }

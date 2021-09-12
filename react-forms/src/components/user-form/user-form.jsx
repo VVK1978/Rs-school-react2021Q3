@@ -13,6 +13,7 @@ class UserForm extends Component {
     this.state = {
       gender: 'female',
       cardData: [],
+      stateId: 'state',
     };
 
     this.onChange = this.onChange.bind(this);
@@ -20,13 +21,12 @@ class UserForm extends Component {
   }
 
   onChange(e) {
-    const { value } = e.target;
-    const { id } = e.target;
-    if (id === 'state') {
-      this.onCities(this.statesUsa.indexOf(value));
-    }
+    const { value, id } = e.target;
     if (!id) {
       this.setState({ gender: value });
+    }
+    if (id === this.state.stateId) {
+      this.onCities(this.statesUsa.indexOf(value));
     }
   }
 
@@ -48,9 +48,7 @@ class UserForm extends Component {
       alert('ZIP code wrong!!!');
       e.target.zip.value = '';
     } else {
-      const newList = [...this.state.cardData];
-      newList.push(this.data);
-      this.setState({ cardData: newList });
+      this.setState({ cardData: [...this.state.cardData, this.data] });
       this.formReset();
     }
   }
@@ -67,10 +65,11 @@ class UserForm extends Component {
   }
 
   onCities(stateIndex) {
+    const isStateSelect = false;
     this.element = document.querySelector('.cities');
     this.content = document.getElementById('city');
     removeChild(this.content);
-    if (stateIndex === -1) {
+    if (stateIndex === isStateSelect) {
       this.element.style.display = 'none';
     } else {
       this.element.style.display = 'flex';

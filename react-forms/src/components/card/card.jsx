@@ -4,12 +4,10 @@ class Card extends Component {
   constructor(props) {
     super(props);
     this.props = props;
-    // console.log(this.props.data);
   }
 
   render() {
     return (
-      <>
         <div className='card-body'>
           <h4 className='card-first-name'>
             <span>First Name:</span>
@@ -48,7 +46,6 @@ class Card extends Component {
             {this.props.data.gender}
           </h4>
         </div>
-      </>
     );
   }
 }

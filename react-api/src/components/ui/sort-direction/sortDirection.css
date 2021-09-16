@@ -1,0 +1,9 @@
+.direction-img {
+  width: 32px;
+  margin-left: 16px;
+}
+
+.direction-img:hover {
+  opacity: 0.6;
+}
+/*# sourceMappingURL=sortDirection.css.map */
